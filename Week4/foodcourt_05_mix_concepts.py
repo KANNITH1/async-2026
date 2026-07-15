@@ -11,7 +11,7 @@ async def main():
     noodle_task = asyncio.create_task(send_order_to_kitchen(my_student_id, "noodle", "Egg Noodle"))
     chicken_task = asyncio.create_task(asyncio.wait_for(
         send_order_to_kitchen(my_student_id, "hainanese_chicken", "Chicken Rice Special"), 
-        timeout=1.0
+        timeout=2.0
     ))
     try:
         result = await asyncio.gather(noodle_task, chicken_task)
